@@ -1,16 +1,15 @@
 import java.util.*;
 class Solution {
     public int[] solution(int k, int[] score) {
-        LinkedList<Integer>list = new LinkedList<>();
+        PriorityQueue<Integer>pq = new PriorityQueue<>();
         int[] answer = new int[score.length];
         int idx = 0;
         for(int e : score){
-            list.push(e);
-            Collections.sort(list);
-            if(list.size() == k+1){
-                list.pop();
+            pq.add(e);
+            if(pq.size() > k){
+                pq.poll();
             }
-            answer[idx++] = list.peek();
+            answer[idx++] = pq.peek();
         }
         return answer;
     }
