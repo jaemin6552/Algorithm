@@ -15,4 +15,3 @@ class Solution {
         return Arrays.stream(triangle[triangle.length-1]).max().getAsInt();
     }
 }
-//아래로 가면서 계산 계산했는데 이전 높이에서 계산한값보다 낮으면 가지치기
