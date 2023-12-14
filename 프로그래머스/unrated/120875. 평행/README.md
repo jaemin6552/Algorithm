@@ -1,10 +1,10 @@
 # [level unrated] 평행 - 120875 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120875) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120875#) 
 
 ### 성능 요약
 
-메모리: 73.9 MB, 시간: 0.42 ms
+메모리: 80.7 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 12월 5일 5:11:16
+2023년 12월 5일 5:47:10
 
 ### 문제 설명
 
