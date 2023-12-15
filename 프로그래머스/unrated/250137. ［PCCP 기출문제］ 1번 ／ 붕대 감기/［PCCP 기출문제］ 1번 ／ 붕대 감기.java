@@ -6,7 +6,7 @@ class Solution {
             if(health <= 0) return -1;
             int healT = (attacks[i+1][0]-attacks[i][0]-1); 
             health += healT*bandage[1]+(healT/bandage[0])*bandage[2];
-            if(health > maxHP) health = maxHP;
+            health = Math.min(health,maxHP);
         }
         health-=attacks[attacks.length-1][1];    
         
