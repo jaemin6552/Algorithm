@@ -13,10 +13,8 @@ class Solution {
                 } else visited[i][j] = true;
             }
         }
-        for(int j=0; j<land[0].length; j++){
-        answer = Math.max(oils[j],answer);
-        }
-        return answer;
+        Arrays.sort(oils);
+        return oils[oils.length-1];
     }
     public void getOilAmount(int[][]land,boolean [][]visited,int[] oils,int x,int y){
         Queue<int[]>current = new LinkedList<>();
