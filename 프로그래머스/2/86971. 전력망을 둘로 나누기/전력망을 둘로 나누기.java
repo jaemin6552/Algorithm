@@ -22,13 +22,13 @@ class Solution {
         return answer;
     }
     public int dfs(int start,boolean []visited,int target){
-        visited[start] = true;
-        int maxHeight = 0;
-        for(Integer next : grapes.get(start)){
-            if(visited[next] == false && next != target){
-                maxHeight += dfs(next,visited,target)+1;
-            }
-        }
-        return maxHeight;
+       visited[start] = true;
+       int maxChild = 0;
+       for(Integer next : grapes.get(start)){
+           if(!visited[next] && next != target){
+               maxChild+=dfs(next,visited,target)+1;
+           }
+       } 
+        return maxChild;
     }
 }
