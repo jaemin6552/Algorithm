@@ -1,7 +1,6 @@
 class Solution {
     public int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
-        answer[0] = Integer.MAX_VALUE;
         int area = brown+yellow;
         for(int i =area/2; i>0; i--){
             if(area%i ==0){
