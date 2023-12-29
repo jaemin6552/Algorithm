@@ -1,9 +1,10 @@
 class Solution {
     public int solution(int[] arr) {
-        for(int i =0; i<arr.length-1; i++){
-            arr[i+1] = LCM(arr[i+1],arr[i]);
+        int answer = 1;
+        for(int i =0; i<arr.length; i++){
+            answer = LCM(arr[i],answer);
         }
-        return arr[arr.length-1];
+        return answer;
     }
     public int LCM(int a, int b){
         int multiply = a*b;
