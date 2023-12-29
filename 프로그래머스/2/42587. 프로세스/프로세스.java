@@ -3,18 +3,16 @@ class Solution {
     public int solution(int[] priorities, int location) {
         int answer = 0;
         Queue<Node>que = new LinkedList<>();
-        List<Integer>list = new ArrayList<>();
         for(int i = 0; i<priorities.length; i++){
             que.add(new Node(i,priorities[i]));
-            list.add(priorities[i]);
         }
-        Collections.sort(list,Collections.reverseOrder());
-        int idx=0;
+        Arrays.sort(priorities);
+        int idx=priorities.length-1;
         while(!que.isEmpty()){
             Node cur = que.remove();
-            if(cur.priority != list.get(idx)) que.add(cur);
+            if(cur.priority != priorities[idx]) que.add(cur);
             else{
-                idx++;
+                idx--;
                 answer++;
                 if(cur.location == location) break;
             }
