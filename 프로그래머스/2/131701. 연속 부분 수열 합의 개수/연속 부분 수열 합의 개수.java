@@ -1,17 +1,13 @@
 import java.util.*;
 class Solution {
     public int solution(int[] elements) {
-        int answer = 0;
         int length = elements.length;
+        int []dp = new int[length];
         HashSet<Integer>hashset = new HashSet<>();
-        for(int i=0; i<length; i++){
+        for(int i=1; i<=length; i++){
             for(int j=0; j<length; j++){
-                int sum = elements[j];     
-                for(int k=j; k<j+i; k++){
-                    int idx = k+1 >= length ? (k+1)-length : k+1;
-                    sum+= elements[idx];
-                }
-                hashset.add(sum);
+                dp[j] = elements[(j+i-1) % length]+dp[j];
+                hashset.add(dp[j]);
             }
         }
         return hashset.size();
