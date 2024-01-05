@@ -3,7 +3,6 @@ class Solution {
         int answer = 0;
         String tmp = Integer.toString(n,2);
         int cnt = 0;
-        int idx = 1;
         for(char ch : tmp.toCharArray()) cnt += ch == '1' ? 1 : 0;
         for(int i =n+1; i<1000000; i++){
             String score = Integer.toString(i,2);
