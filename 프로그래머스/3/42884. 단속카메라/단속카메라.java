@@ -5,9 +5,7 @@ class Solution {
         Arrays.sort(routes,Comparator.comparingInt(a->a[1]));
         int end = routes[0][1];
         for(int i =1; i<routes.length; i++){
-            if(routes[i][0] <= end){
-                continue;
-            }else{
+            if(routes[i][0] > end){     
                 answer++;
                 end = routes[i][1];
             }
