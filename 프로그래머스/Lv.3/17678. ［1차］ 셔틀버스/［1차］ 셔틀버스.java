@@ -15,15 +15,16 @@ class Solution {
         }
 
         Date last = null;
+        int cnt = -1;
         for (int i = 0; i < n; i++) {
+            cnt = -1;
             for (int j = 0; j < m; j++) {
                 Date current = pq.peek();
                 if (current != null && current.getTime() <= start.getTime()) {
                     last = pq.poll();
-                    if(j < m-1) last = start;
-                    else last.setTime(last.getTime() - 60000);
+                    cnt = j;
+                    last.setTime(last.getTime() - 60000);
                 } else {
-                    if(j < m-1) last = start;
                     break;
                 }
             }
@@ -32,6 +33,7 @@ class Solution {
             }
             start.setTime(start.getTime() + 60000 * t);
         }
-        return sdf.format(last != null ? last : start);
+        if(cnt < m-1) last = start;
+        return sdf.format(last);
     }
 }
