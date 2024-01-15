@@ -39,7 +39,7 @@ class Solution {
     public int getCaseCnt(int[] target,int[] treeCnt,int head){
         Queue<Integer>queue = new LinkedList<>();
         queue.add(head);
-        int cnt = 0;
+        int total = 0;
         while(!queue.isEmpty()){
             int cur = queue.remove();
             if(!grapes.get(cur).isEmpty()){
@@ -47,23 +47,20 @@ class Solution {
                 treeCnt[cur]++;
                 queue.add(next);
             } else{
-                cnt++;
-                treeCnt[cur]+=3;
+                total++;
+                treeCnt[cur]++;
                 boolean flag = true;
                 orders.add(cur);
                 for(int i = 0; i<treeCnt.length; i++){
-                    if(treeCnt[i] < target[i]) {
+                    if(treeCnt[i]*3 < target[i]) {
                         flag = false;
                         break;
                     }
                 }
                 if(flag) {
-                    for(int i = 0; i<treeCnt.length; i++){
-                        treeCnt[i]/=3;
-                    }
-                    return cnt;
+                    return total;
                 }
-                if(treeCnt[cur] > (target[cur] * 3)) return -1;
+                if(treeCnt[cur]*3 > (target[cur] * 3)) return -1;
                 queue.add(head);
                 }
         }
