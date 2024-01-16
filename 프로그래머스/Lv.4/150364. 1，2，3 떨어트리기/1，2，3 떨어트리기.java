@@ -1,11 +1,9 @@
 import java.util.*;
 class Solution {
     List<List<Integer>>grapes;
-    boolean []isOver;
     List<Integer>orders;
     public int[] solution(int[][] edges, int[] target) {
         int[] treeCnt = new int[target.length];
-        isOver = new boolean[target.length];
         grapes = new ArrayList<>();
         orders = new ArrayList<>();
         List<Integer>head = new ArrayList<>();
