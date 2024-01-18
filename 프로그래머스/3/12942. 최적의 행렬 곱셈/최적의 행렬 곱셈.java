@@ -15,7 +15,7 @@ class Solution {
                 int b = j + i;
                 for(int k = a; k<b; k++){
                     dp[a][b] = Math.min(dp[a][b],dp[a][k]+dp[k+1][b]+
-                        matrix_sizes[a][0]*matrix_sizes[k][1]*matrix_sizes[b][1]);
+                        matrix_sizes[a][0]*matrix_sizes[k+1][0]*matrix_sizes[b][1]);
                 }
             }
         }
