@@ -4,7 +4,7 @@ class Solution {
         int answer = 0;
         int [][]dp = new int[2][money.length];
         dp[0][0] = money[0];
-        dp[0][1] = Math.max(money[0],money[1]);
+        dp[0][1] = money[0];
         
         dp[1][0] = 0;
         dp[1][1] = money[1];
